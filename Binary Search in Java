@@ -1,0 +1,32 @@
+class Demo {
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 3, 4, 5}; // Sorted Array
+        int target = 5;
+        boolean found = false;
+
+        System.out.println("Elements in the Array:");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+
+        int low = 0;
+        int high = arr.length - 1;
+
+        while (low <= high) {
+            int mid = (low + high) / 2; // Calculate mid in each iteration
+            if (arr[mid] == target) {
+                System.out.println(target + " is present at index " + mid);
+                found = true;
+                break;
+            } else if (arr[mid] < target) {
+                low = mid + 1; // Adjust the low pointer
+            } else {
+                high = mid - 1; // Adjust the high pointer
+            }
+        }
+
+        if (!found) {
+            System.out.println("Element is not present in the Array");
+        }
+    }
+}
