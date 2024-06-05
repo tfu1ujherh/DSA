@@ -1,0 +1,24 @@
+class Demo {
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 3, 4, 5};
+        System.out.println("Elements in the Array:");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+        
+        int target = 4;
+        boolean found = false; // Flag to check if target is found
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) {
+                System.out.println("Linear Search: " + target + " present at index " + i);
+                found = true;
+                break; // Exit the loop once the target is found
+            }
+        }
+
+        if (!found) {
+            System.out.println("Linear Search: " + target + " not found in the array");
+        }
+    }
+}
