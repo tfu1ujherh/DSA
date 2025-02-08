@@ -1,18 +1,21 @@
-class TreeNode {
-    int value;
-    TreeNode left;
-    TreeNode right;
-
-    // Constructor to initialize a new node
-    public TreeNode(int value) {
-        this.value = value;
-        left = null;
-        right = null;
-    }
-}
+import java.util.Scanner;
 
 public class insertion {
-    private TreeNode root;
+     TreeNode root;
+
+    // Make TreeNode a static nested class
+      class TreeNode {
+        int value;
+        TreeNode left;
+        TreeNode right;
+
+        // Constructor to initialize a new node
+         TreeNode(int value) {
+            this.value = value;
+            left = null;
+            right = null;
+        }
+    }
 
     // Method to insert a value into the BST
     public void insert(int value) {
@@ -52,18 +55,21 @@ public class insertion {
 
     public static void main(String[] args) {
         insertion obj = new insertion();
-        obj.insert(10);
-        obj.insert(20);
-        obj.insert(30);
-        obj.insert(40);
-        obj.insert(50);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the number of values you want to insert:");
+        int n = scanner.nextInt();
+
+        System.out.println("Enter the values to insert into the BST:");
+        for (int i = 0; i < n; i++) {
+            int value = scanner.nextInt();
+            obj.insert(value);
+        }
 
         // Perform inorder traversal
-        System.out.println("Inorder Traversal:");
+        System.out.println("Inorder Traversal of the BST:");
         obj.inOrder();
+
+        scanner.close();
     }
 }
-
-
-
-
